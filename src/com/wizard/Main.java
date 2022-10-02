@@ -13,7 +13,18 @@ public class Main {
         List<Integer> fromKeyList = new ArrayList<Integer>( Arrays. asList( 0 , 0 , 1 ) );
         List<Integer> toKeyList = new ArrayList<Integer>( Arrays. asList( 1 , 2 , 3 ) );
         List<Integer> valList = new ArrayList<Integer>( Arrays. asList( 5 , 5 , 7, 5 ) );
+        getNumWays(gNodes, fromKeyList, toKeyList, valList);
 
+        System.out.println("___________________________________________________________________");
+        System.out.println("___________________________________________________________________");
+        gNodes = 4;
+        fromKeyList = new ArrayList<Integer>( Arrays. asList( 0 , 1 , 0 ) );
+        toKeyList = new ArrayList<Integer>( Arrays. asList( 1 , 3 , 2 ) );
+        valList = new ArrayList<Integer>( Arrays. asList( 3 , 7 , 3, 3 ) );
+        getNumWays(gNodes, fromKeyList, toKeyList, valList);
+    }
+
+    private static int getNumWays(int gNodes, List<Integer> fromKeyList, List<Integer> toKeyList, List<Integer> valList) {
         // Form initial tree
         BinaryTree parentTree = new BinaryTree(fromKeyList.get(0) , valList.get(0));
 
@@ -100,5 +111,6 @@ public class Main {
         System.out.println("___________________________________________________________________");
         System.out.println("___________________________________________________________________");
         System.out.println("There are " + andValMatchCount + " ways to split the tree into trees with equal bitwise AND");
+        return andValMatchCount;
     }
 }
